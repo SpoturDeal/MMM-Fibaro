@@ -6,17 +6,17 @@
  */
  Module.register('MMM-Fibaro', {
 	defaults: {
-		updateInterval: 90, // every 90 seconden
-		apiBase: '192.168.xx.xxx',
-		apiPort: 80,
-		apiEndpoint: 'api/interface/data',
-        apiUser: "xxx",
+		updateInterval: 45,                          // every 45 seconds
+		apiBase: '192.168.xx.xxx',                   // the IPaddress of you Fibaro HC in your home network
+		apiPort: 80,                                 // just leave at 80
+		apiEndpoint: 'api/interface/data',           // access to api
+        apiUser: "xxx",                              // The emailaddress you use to login
         apiPw: "xxxx",
-        moduleTitle: "Huidige temperaturen",
-        energyTitle: "Energy use",
-        energyNow: "Currently",
-        energyTotal: "Total used",
- 		showItems: ['temperature','energy']
+        moduleTitle: "Current temperatures Fibaro",  // You can adapt the following text to fit your language
+        energyTitle: "Energy use",                   // The tile for the energy use part
+        energyNow: "Currently",                      // Label to show current use
+        energyTotal: "Total used",                   // Label for total registred energy used
+ 		showItems: ['temperature','energy']          // Currently available temperature, energy     
 	},
 	start: function() {
 		Log.info('Starting module: ' + this.name);
