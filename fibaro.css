@@ -1,0 +1,23 @@
+.fibaro ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.fibaro ul .name,
+.fibaro ul .art {
+  display: inline-block;
+  vertical-align: middle;
+}
+.fibaro ul .name {
+  padding: 0 .25em;
+}
+.fibaro ul .art img {
+  height: 100px;
+}
+.fibaro ul .name {
+  font-size: 50%;
+  padding: .25em .5em;
+}
+.fibaro ul.flip {
+  direction: rtl;
+}
