@@ -3,16 +3,12 @@ MagicMirror Fibaro Module
 ### Installation
 
 Navigate into your MagicMirror's modules folder:
-
 ```shell
 cd ~/MagicMirror/modules
-```
 Clone this repository:
-```shell
 git clone https://github.com/SpoturDeal/MMM-Fibaro
-
 Configure the module in your config.js file.
-
+```
 ### Configuration
 
 To run the module properly, you need to add the following data to your config.js file.
@@ -33,6 +29,6 @@ To run the module properly, you need to add the following data to your config.js
           energyNow: 'Currently using',                 // Label to show current use
           energyTotal: 'Total used',                    // Label for total registred energy used
           showItems: ['temperature','energy']           // Currently available temperature, energy       
-          
-  }
-}
+        }
+ },
+ ```
