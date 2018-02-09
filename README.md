@@ -33,3 +33,6 @@ To run the module properly, you need to add the following data to your config.js
         }
  },
  ```
+### Image
+
+The preview.png file is the image that appears on your screen
