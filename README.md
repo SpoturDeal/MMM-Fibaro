@@ -3,10 +3,11 @@ MagicMirror Fibaro Module
 ### Installation
 
 Navigate into your MagicMirror's modules folder:
-```shell
+```
 cd ~/MagicMirror/modules
 Clone this repository:
 git clone https://github.com/SpoturDeal/MMM-Fibaro
+
 Configure the module in your config.js file.
 ```
 ### Configuration
