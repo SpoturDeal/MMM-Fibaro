@@ -39,20 +39,22 @@
         for (i=0;i<data.devices.length;i++){
             var dev=data.devices[i];
             if (dev.type == 'com.fibaro.temperatureSensor'){
-               therm += '<tr><td class="small">' + dev.name + '</td><td class="small">' + parseFloat(dev.properties.value).toFixed(1) + "</td></tr>";   
+               therm += '<tr><td class="small">' + dev.name + '</td><td class="small '+(dev.properties.value< 0.6?'red':'')+'">' + parseFloat(dev.properties.value).toFixed(1) + "&deg;</td></tr>";   
             } else if (dev.properties.power){
                powerUse += (!isNaN(dev.properties.power)?parseFloat(dev.properties.power):0);
                usedEnergy += (!isNaN(dev.properties.energy)?parseFloat(dev.properties.energy):0);
             }
-        }           
+        } 
+                
         therm += '</table>';
         
         var power='<header class="module-header">' + this.config.energyTitle + '</header>';
         power +='<table><tr><td class="small">' + this.config.energyNow + '</td><td class="small">' + powerUse.toFixed(2) +' Watt</td></tr>';
-        power +='<tr><td class="small">' + this.config.energyTotal +'</td><td class="small">' + usedEnergy.toFixed(2) +' kWh</td></tr></table></div>';
+        power +='<tr><td class="small">' + this.config.energyTotal +'</td><td class="small">' + usedEnergy.toFixed(2) +' kWh</td></tr></table>';
         
         text += (this.config.showItems.indexOf('temperature') !== -1?therm:'');
         text += (this.config.showItems.indexOf('energy') !== -1?power:''); 
+        text += '</div>';
         
 		this.loaded = true;
 		// only update dom if content changed
@@ -60,6 +62,10 @@
 			this.dom = text;
 			this.updateDom(this.config.animationSpeed);
 		}
+         
+        delete text;
+        delete power;
+        delete data; 
 	},
 	html: {
 		loading: '<div class="dimmed light small">Loading Fibaro data ....</div>'
